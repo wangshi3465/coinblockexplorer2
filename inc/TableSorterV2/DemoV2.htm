@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>K2046.TableSorterV2</title>
+    <style type="text/css">
+        body{font-size:12px;line-height:25px;}
+        tr{height:25px;}
+        th{font-size:14px;border-bottom:solid 1px #DDDDDD;background-color:#EEEEEE;}
+        td{font-size:12px;text-align:center;}
+        .SortDescCss{background-image:url(Desc.gif);background-repeat:no-repeat;background-position:right center;}
+        .SortAscCss{background-image:url(Asc.gif);background-repeat:no-repeat;background-position:right center;}
+    </style>
+    <script language="javascript" type="text/javascript" src="TableSorterV2.js"></script>
+    <script language="javascript" type="text/javascript">
+window.onload = function()
+{
+    new TableSorter("tb1");
+    new TableSorter("tb2", 0, 2 , 5, 6);
+    new TableSorter("tb3").OnSorted = function(c, t)
+    {
+        alert("table is sorted by " + c.innerHTML + " " + (t ? "Asc" : "Desc"));
+    }
+}
+    </script>
+</head>
+<body>
+代码:new TableSorter("tb1");<br />
+<table border="0" style="border:solid 1px #DDDDDD;width:360px;" cellpadding="0" cellspacing="0" id="tb1">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>工号</th>
+        <th>职位</th>
+        <th>性别</th>
+        <th>业绩</th>
+        <th>报到时间</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>刘德华</td>
+        <td>8008</td>
+        <td>总裁</td>
+        <td>男</td>
+        <td>98</td>
+        <td>2008-04-12</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>吴奇隆</td>
+        <td>8004</td>
+        <td>主管</td>
+        <td>男</td>
+        <td>80</td>
+        <td>2008-04-16</td>
+    </tr>
+    <tr style="background-color:#DDDDDD;">
+        <td>10</td>
+        <td>王光良</td>
+        <td>8003</td>
+        <td>经理</td>
+        <td>男</td>
+        <td>85</td>
+        <td>2008-04-15</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>张学友</td>
+        <td>8009</td>
+        <td>副总裁</td>
+        <td>男</td>
+        <td>90</td>
+        <td>2008-04-11</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>张柏芝</td>
+        <td>8005</td>
+        <td>助理</td>
+        <td>女</td>
+        <td>78</td>
+        <td>2008-04-13</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>陈冠希</td>
+        <td>8001</td>
+        <td>总监</td>
+        <td>男</td>
+        <td>60</td>
+        <td>2008-04-18</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>陈慧琳</td>
+        <td>8002</td>
+        <td>试用期</td>
+        <td>女</td>
+        <td>85</td>
+        <td>2008-04-18</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>张曼玉</td>
+        <td>8007</td>
+        <td>高级经理</td>
+        <td>女</td>
+        <td>82</td>
+        <td>2008-04-16</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>周润发</td>
+        <td>8006</td>
+        <td>副总裁</td>
+        <td>男</td>
+        <td>88</td>
+        <td>2008-04-13</td>
+    </tr>
+</table>
+<br />
+代码:new TableSorter("tb2", 0, 2, 5, 6);<br />
+<table border="0" style="border:solid 1px #DDDDDD;width:360px;" cellpadding="0" cellspacing="0" id="tb2">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>工号</th>
+        <th>职位</th>
+        <th>性别</th>
+        <th>业绩</th>
+        <th>报到时间</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>刘德华</td>
+        <td>8008</td>
+        <td>总裁</td>
+        <td>男</td>
+        <td>98</td>
+        <td>2008-04-12</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>吴奇隆</td>
+        <td>8004</td>
+        <td>主管</td>
+        <td>男</td>
+        <td>80</td>
+        <td>2008-04-16</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王光良</td>
+        <td>8003</td>
+        <td>经理</td>
+        <td>男</td>
+        <td>85</td>
+        <td>2008-04-15</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>张学友</td>
+        <td>8009</td>
+        <td>副总裁</td>
+        <td>男</td>
+        <td>90</td>
+        <td>2008-04-11</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>张柏芝</td>
+        <td>8005</td>
+        <td>助理</td>
+        <td>女</td>
+        <td>78</td>
+        <td>2008-04-13</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>陈冠希</td>
+        <td>8001</td>
+        <td>总监</td>
+        <td>男</td>
+        <td>60</td>
+        <td>2008-04-18</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>陈慧琳</td>
+        <td>8002</td>
+        <td>试用期</td>
+        <td>女</td>
+        <td>85</td>
+        <td>2008-04-18</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>张曼玉</td>
+        <td>8007</td>
+        <td>高级经理</td>
+        <td>女</td>
+        <td>82</td>
+        <td>2008-04-16</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>周润发</td>
+        <td>8006</td>
+        <td>副总裁</td>
+        <td>男</td>
+        <td>88</td>
+        <td>2008-04-13</td>
+    </tr>
+</table>
+<br /><br />
+代码:new TableSorter("tb3").OnSorted = function(c, t)<br />
+    {<br />
+        alert("table is sorted by " + c.innerHTML + " " + (t ? "Asc" : "Desc"));<br />
+    }<br />
+<table border="0" style="border:solid 1px #DDDDDD;width:360px;" cellpadding="0" cellspacing="0" id="tb3">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>工号</th>
+        <th>职位</th>
+        <th>性别</th>
+        <th>业绩</th>
+        <th>报到时间</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>刘德华</td>
+        <td>8008</td>
+        <td>总裁</td>
+        <td>男</td>
+        <td>98</td>
+        <td>2008-04-12</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>吴奇隆</td>
+        <td>8004</td>
+        <td>主管</td>
+        <td>男</td>
+        <td>80</td>
+        <td>2008-04-16</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王光良</td>
+        <td>8003</td>
+        <td>经理</td>
+        <td>男</td>
+        <td>85</td>
+        <td>2008-04-15</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>张学友</td>
+        <td>8009</td>
+        <td>副总裁</td>
+        <td>男</td>
+        <td>90</td>
+        <td>2008-04-11</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>张柏芝</td>
+        <td>8005</td>
+        <td>助理</td>
+        <td>女</td>
+        <td>78</td>
+        <td>2008-04-13</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>陈冠希</td>
+        <td>8001</td>
+        <td>总监</td>
+        <td>男</td>
+        <td>60</td>
+        <td>2008-04-18</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>陈慧琳</td>
+        <td>8002</td>
+        <td>试用期</td>
+        <td>女</td>
+        <td>85</td>
+        <td>2008-04-18</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>张曼玉</td>
+        <td>8007</td>
+        <td>高级经理</td>
+        <td>女</td>
+        <td>82</td>
+        <td>2008-04-16</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>周润发</td>
+        <td>8006</td>
+        <td>副总裁</td>
+        <td>男</td>
+        <td>88</td>
+        <td>2008-04-13</td>
+    </tr>
+</table>
+<br />
+</body>
+</html>
