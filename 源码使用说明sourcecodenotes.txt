@@ -1,0 +1,20 @@
+/***************源码使用说明source code notes*******************/
+一，文件夹及文件说明
+cron文件夹 主要是数据库的建立，以及查询区块的文件
+db文件夹 放的是数据库中最新的区块和最近执行的时间
+img文件夹 放了一些图片
+inc文件夹 配置和页面的源码
+lib文件夹 钱包连接的lib文件
+
+二，使用方法
+1.下载钱包进行同步，然后把xxxcoin.conf放入区块数据文件夹中；
+2.记下网站服务器上安装的mysql的用户名和密码;
+3.修改inc文件夹中的config.inc.php文件;
+4.修改lib文件夹中的rpcclient.lib.php文件，主要是36行和90行的ip地址和port端口（rpcport）。
+5.修改img文件夹中的coinlogo.png和logo.png；
+6.首次运行需要删除db文件中的两个.txt文件；
+7.（若为masternode节点币）修改inc-pages-masternode.inc.php和address.inc.php,block.inc.php文件中的相关少量数据；
+8.运行cron文件夹中的first_run...文件，成功后，运行一次second_txs..文件；若要看富豪榜，需要运行一次third_who..文件。
+9.设置定时执行second_txs..和third_who..文件，一般1小时或4小时执行一次，按自己需求。
+
+/*******************************************/
